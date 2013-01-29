@@ -11,8 +11,11 @@ def index():
 def new_fuck():
 	new_name = request.form["name"]
 	names.append(new_name)
-	return str(len(names))
+	return "Great Success\n"
 
+@app.route("/number_fucks", methods=['GET'])
+def number_fucks():
+	return str(len(names))
 
 app.debug = True
 if __name__ == "__main__":
