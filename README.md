@@ -12,7 +12,7 @@ a web-scale implementation of the fuck command
 	* pass the array
 	* render it
 * get, store, and return more than just name (timestamp, maybe location)
-
+* impliment a database so data is persistant after the server dies
 
 # Done
 
