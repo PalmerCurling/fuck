@@ -7,7 +7,7 @@ names=[]
 def index():
 	return str(names)
 
-@app.route("/new_fuck", methods=['POST'])
+@app.route("/new_fucks", methods=['POST'])
 def new_fuck():
 	new_name = request.form["name"]
 	names.append(new_name)
