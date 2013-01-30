@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request
 app = Flask(__name__)
 
 names=[]
@@ -19,10 +19,10 @@ def new_fuck():
 def number_fucks():
 	return str(len(names))
 
-#View for recent fucks given (under construction)
+#View for recent fucks given
 @app.route("/fucks_given", methods=['GET'])
 def fucks_given():
-	return render_template("fucks_given")
+	return str(names)
 
 app.debug = True
 if __name__ == "__main__":
