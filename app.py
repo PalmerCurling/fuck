@@ -4,7 +4,7 @@ app = Flask(__name__)
 names=[]
 
 #route to view all the people who have given a fuck
-@app.route("/")
+@app.route("/", methods=['GET'])
 def index():
 	return str(names)
 
@@ -19,11 +19,6 @@ def new_fuck():
 def number_fucks():
 	return str(len(names))
 
-#View for recent fucks given
-@app.route("/fucks_given", methods=['GET'])
-def fucks_given():
-	return str(names)
-
-app.debug = True
+#app.debug = True
 if __name__ == "__main__":
 	app.run()
