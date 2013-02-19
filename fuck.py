@@ -2,8 +2,8 @@ import requests
 import getpass
 
 #points to our URLS & establishes dictionary instance with current username
-new_fucks = "http://0.0.0.0:5000/new_fucks"
-number_fucks = "http://0.0.0.0:5000/number_fucks"
+new_fucks = "http://murmuring-forest-5562.herokuapp.com/new_fucks"
+number_fucks = "http://murmuring-forest-5562.herokuapp.com/number_fucks"
 name = {"name": getpass.getuser()}
 
 
