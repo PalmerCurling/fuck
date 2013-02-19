@@ -8,7 +8,8 @@ def add_to_names(name):
 	if len(names) < 3:
 		names.append(name)
 	else:
-		if name == names[0] and names[0] == names[1] and names[0] == names[2]:
+		last_index = len(names)-1
+		if name == names[last_index] and names[last_index] == names[last_index-1] and names[last_index] == names[last_index-2]:
 			return False 
 		else:
 			names.append(name)
