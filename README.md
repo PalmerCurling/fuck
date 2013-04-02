@@ -1,21 +1,15 @@
-# fuck
+# Fuck
 
 a web-scale implementation of the fuck command
 
+Working on a project?
+Need to give fucks?
 
-# TODO
+Just do it then!
 
-* the "fuck" local script
-	* makes a post request to the server at new_fucks
-* make the index page pretty
-	* write it in html as a view
-	* pass the array
-	* render it
-* get, store, and return more than just name (timestamp, maybe location)
-* impliment a database so data is persistant after the server dies
+Add an alias to your bashrc so when you type "fuck" it runs the fuck.py.
 
-# Done
+#TODO
+*Add a DB to actually store values of 5 most recent names+total number of fucks ever given
 
-* accept new fuck post
-* provide basic return of number of fucks given
-* return list of fucks given in index
+visit http://fucks.herokuapp.com/ to see fucks given!
