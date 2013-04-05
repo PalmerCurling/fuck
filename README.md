@@ -10,6 +10,5 @@ Just do it then!
 Add an alias to your bashrc so when you type "fuck" it runs the fuck.py.
 
 #TODO
-*Add a DB to actually store values of 5 most recent names+total number of fucks ever given
-
-visit http://fucks.herokuapp.com/ to see fucks given!
+*Setup new server location, since heroku doesnt support sqlite3
+*array based version at fucks.herokuapp.com; this array clears out when the app sleeps, so this is considered depricated
