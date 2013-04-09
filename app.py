@@ -4,7 +4,7 @@ import psycopg2
 import time
 app = Flask(__name__)
 
-conn = psycopg2.connect("dbname=fuck user=postgres password=thrashers") #check_same_thread=False)
+conn = psycopg2.connect("dbname=HEROKU_POSTGRESQL_COPPER_URL")
 cursor = conn.cursor()
 
 #cursor.execute("""CREATE TABLE fuckers (name text, created_at text)""")
