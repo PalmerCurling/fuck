@@ -7,8 +7,8 @@ import getpass
 
 #new_fucks = "http://fucks.herokuapp.com/new_fucks"
 #number_fucks = "http://fucks.herokuapp.com/number_fucks"
-new_fucks = "http://localhost:5000/new_fucks"
-number_fucks = "http://localhost:5000/number_fucks"
+new_fucks = "http://fucks.heroku.com/new_fucks"
+number_fucks = "http://fucks.heroku.com/number_fucks"
 
 name = {"name": getpass.getuser()}
 
