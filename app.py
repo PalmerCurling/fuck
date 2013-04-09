@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
-#conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
+conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
 cursor = conn.cursor()
 
 #cursor.execute("""CREATE TABLE fuckers (name text, created_at text)""")
