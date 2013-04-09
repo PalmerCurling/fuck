@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 import dj_database_url
 
-print dj_database_url
+config = dj_database_url.config()
 
-conn = psycopg2.connect(db_url)
+conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
 cursor = conn.cursor()
 
 #cursor.execute("""CREATE TABLE fuckers (name text, created_at text)""")
