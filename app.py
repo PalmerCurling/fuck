@@ -4,7 +4,8 @@ import psycopg2
 import time
 app = Flask(__name__)
 
-conn = psycopg2.connect("dbname=HEROKU_POSTGRESQL_COPPER_URL")
+db_url = os.environ.get("HEROKU_POSTGRESQL_COPPER_URL")
+conn = psycopg2.connect(db_url)
 cursor = conn.cursor()
 
 #cursor.execute("""CREATE TABLE fuckers (name text, created_at text)""")
