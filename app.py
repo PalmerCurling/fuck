@@ -4,11 +4,10 @@ import psycopg2
 import time
 app = Flask(__name__)
 
-import dj_database_url
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+db = SQLAlchemy(app)
 
-config = dj_database_url.config()
-
-conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
+#conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
 cursor = conn.cursor()
 
 #cursor.execute("""CREATE TABLE fuckers (name text, created_at text)""")
