@@ -4,7 +4,10 @@ import psycopg2
 import time
 app = Flask(__name__)
 
-db_url = os.environ.get("HEROKU_POSTGRESQL_COPPER_URL")
+import dj_database_url
+
+print dj_database_url
+
 conn = psycopg2.connect(db_url)
 cursor = conn.cursor()
 
