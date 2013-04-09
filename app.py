@@ -2,11 +2,14 @@ from flask import Flask, render_template, request
 import os
 import psycopg2
 import time
-from flask.ext.sqlalchemy import SQLAlchemy
+
+import urlparse
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
+DATABASES['default']
+db = "dbname=%s user=%s password=%s host=%s" % (url.path[1:], url.username, url.password, url.hostname)
 
 conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
 cursor = conn.cursor()
