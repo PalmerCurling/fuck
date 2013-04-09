@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
 import os
-import sqlite3
+import psycopg2
 import time
 app = Flask(__name__)
 
-conn = sqlite3.connect('fucksdatabase.db', check_same_thread=False)
+conn = psycopg2.connect("dbname=fuck user=postgres password=thrashers") #check_same_thread=False)
 cursor = conn.cursor()
 
 #cursor.execute("""CREATE TABLE fuckers (name text, created_at text)""")
@@ -21,16 +21,16 @@ def count_fuckers():
 
 def add_to_names(name):
 	if count_fuckers() < 3:
-		cursor.executemany('INSERT INTO fuckers VALUES (?,?)', [(name, current_time())])
+		cursor.executemany('INSERT INTO fuckers VALUES (%s,%s)', [(name, current_time())])
 		conn.commit()
 	else:
-		cursor.execute('SELECT * FROM fuckers DESC LIMIT 3')
+		cursor.execute('SELECT * FROM fuckers ORDER BY name DESC LIMIT 3')
 		rows = cursor.fetchall()
 
 		if name == rows[0][0] and name == rows[1][0] and name == rows[2][0]:
 			return False 
 		else:
-			cursor.execute('INSERT INTO fuckers VALUES (?,?)', [(name, fuck_time)])
+			cursor.execute('INSERT INTO fuckers VALUES (%s,%s)', [(name, fuck_time)])
 	return True
 
 #route to view all the people who have given a fuck
@@ -55,5 +55,5 @@ def number_fucks():
 
 #app.debug = True
 if __name__ == "__main__":
-	port = int(os.environ.get("PORT", 5000))
+	port = int(os.environ.get("HEROKU_POSTGRESQL_COPPER_URL", 5000))
 	app.run(host='0.0.0.0', port=port)
