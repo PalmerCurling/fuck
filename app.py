@@ -8,7 +8,6 @@ import urlparse
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = "dbname=%s user=%s password=%s host=%s" % (url.path[1:], url.username, url.password, url.hostname)
 
 conn = psycopg2.connect(database=config['default']['HOST'], user=config['default']['USER'], password=config['default']['password'])
 cursor = conn.cursor()
